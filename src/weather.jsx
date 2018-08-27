@@ -39,7 +39,7 @@ export default class Weather extends React.Component {
                     this.setState({
                         isLoaded: true,
                         city: result.name,
-                        temp: result.main.temp,
+                        temp: (result.main.temp).toFixed(0),
                         desc: result.weather[0].description,
                         errorVal: ''
                     })
@@ -86,7 +86,6 @@ export default class Weather extends React.Component {
                     <div>{city}</div>
                     <div>{temp}</div>
                     <div>{desc}</div>
-
                 </div>
             );
         }
